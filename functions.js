@@ -50,3 +50,5 @@ function downloadPdf() {
     });
     
 }
+
+console-log('Desde CDN');

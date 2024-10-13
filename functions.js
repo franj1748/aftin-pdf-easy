@@ -1,3 +1,9 @@
+/*!
+  * Prin PDF Easy v1.3.3
+  * Copyright 2011-2024 
+  * Licensed under GPL 
+  */
+
 function downloadPdf() {
 
     const header   = document.querySelector( '.header' );

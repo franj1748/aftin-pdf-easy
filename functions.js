@@ -51,4 +51,4 @@ function downloadPdf() {
     
 }
 
-console-log('Desde CDN');
+console.log('Desde CDN');

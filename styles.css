@@ -1,0 +1,243 @@
+:root {
+    --color-primary: #01cfb2;
+}
+
+body{
+    background-color: #f4f4f4;
+}
+
+/* Encabezado */
+.header .col-sm-6 h1, .header .col-sm-6 span, .header .col-sm-12 h1, .header .col-sm-12 span {
+    color: var(--color-primary);
+}
+
+.header .col-sm-6 p {
+    font-size: 0.5rem;
+}
+
+hr {
+    border-radius: 5px;
+    border: 1px solid var(--color-primary);
+}
+
+/* Carrusel */
+.carrusel {
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.carrusel img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Icono de eliminar */
+.remove-icon {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: -20px; /* Mover el ícono un poco fuera del elemento */
+    transform: translateY(-50%); /* Centrar el ícono verticalmente */
+    cursor: pointer;
+    color: #000;
+    font-size: 20px; /* Aumentar tamaño del ícono */
+    z-index: 100000;
+}
+
+/* Clase para elementos que pueden ser eliminados */
+.hoverable {
+    position: relative;
+    /* padding-right: 1px;  */
+}
+
+.carrusel img {
+    padding-right: 0 !important;
+}
+
+/* Mostrar el ícono solo en el elemento actual */
+.hoverable:hover .remove-icon {
+    display: flex;
+    background: #01cfb2;
+    align-items: center;
+    height: 100%;
+    padding: 0 5px;
+}
+
+/* Capa opaca cuando se hace hover */
+.hoverable:hover {
+    background-color: #01cfb242; /* Fondo semitransparente */
+}
+
+.container{
+    border: 1px solid #999999;
+    background-color: #fff;
+}
+
+.row.navbar{
+    margin: 0 -24px;
+}
+
+/* Botón de scroll */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 20px; /* Espacio desde la parte inferior */
+    right: 20px;  /* Espacio desde el lado derecho */
+    background-color: #343a40; /* Color de fondo del botón */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    transition: opacity 0.3s ease-in-out;
+}
+
+.scroll-top-btn:hover {
+    background-color: #495057;
+}
+
+.scroll-top-btn:active {
+    transform: scale(0.95);
+}
+
+/* Resaltado de busqueda */
+.highlight {
+    background-color: #FFEB3B;
+    border-radius: 5px;
+}
+
+@media print {
+
+    body {
+        -webkit-print-color-adjust: exact;
+        background-color: #fff;
+    }
+
+    .remove-icon, .row.navbar, .tooltip, .progress, #scroll-to-top {
+        display: none;
+    }
+
+    .container{
+        border: none;  
+    }
+
+}
+
+@media (min-width: 1015px) {
+    .container {
+        width: calc(100% - 320px);
+    }
+}
+
+.introjs-tooltip {
+    background-color: rgba(000, 0, 0, 0.5) !important;
+    color: #fff !important;
+}
+
+.introjs-button,
+.introjs-button:hover, .introjs-button:focus, .introjs-button:active,
+.introjs-disabled, .introjs-disabled:focus, .introjs-disabled:hover {
+    outline: none !important;
+    background-image: none !important;
+    background-color: transparent !important;
+    color: #fff !important;
+    border: 1px solid #fff !important;
+    border-radius: 50px !important;
+    box-shadow: none !important;
+    border-shadow: none !important;
+    text-shadow: none !important;
+}
+
+.introjs-button:hover, .introjs-button:focus, .introjs-button:active {
+    border: 1px solid #fff
+}
+.introjs-disabled, .introjs-disabled:focus, .introjs-disabled:hover {
+    color: #ccc !important;
+    border: 1px solid transparent !important;
+}
+
+.introjs-arrow {
+    border: 10px solid #fff !important;
+}
+.introjs-arrow.top, .introjs-arrow.top-middle, .introjs-arrow.top-right {
+    border-color: transparent transparent rgba(000, 0, 0, 0.5) !important;
+    top: -20px !important;
+    left: 20px !important;
+}
+.introjs-arrow.bottom, .introjs-arrow.bottom-middle, .introjs-arrow.bottom-right {
+    border-color: rgba(000, 0, 0, 0.5) transparent transparent !important;
+    bottom: -20px !important;
+    left: 20px !important;
+}
+.introjs-arrow.left, .introjs-arrow.right {
+    top: 20px !important;
+}
+.introjs-arrow.left-bottom, .introjs-arrow.right-bottom {
+    bottom: 20px !important;
+}
+
+.introjs-arrow.left, .introjs-arrow.left-bottom {
+    left: -20px !important;
+    border-color: transparent rgba(000, 0, 0, 0.5) transparent transparent !important;
+}
+.introjs-arrow.right, .introjs-arrow.right-bottom {
+    right: -20px !important;
+    border-color: transparent transparent transparent rgba(000, 0, 0, 0.5) !important;
+}
+
+.introjs-dontShowAgain label{
+    color: #fff !important;
+    background-color: unset !important;
+}
+
+.introjs-skipbutton:focus, .introjs-skipbutton:hover{
+    color: #fff !important;
+}
+
+.introjs-skipbutton{
+    color: #fff !important;
+}
+
+/* CSS */
+.button-23 {
+    background-color: #FFFFFF;
+    border: 1px solid #222222;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #222222;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    margin: 0;
+    outline: none;
+    padding: 5px 15px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    touch-action: manipulation;
+    transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s;
+    user-select: none;
+    -webkit-user-select: none;
+    width: auto;
+}
+
+.button-23:focus-visible {
+    box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+    transition: box-shadow .2s;
+}
+
+.button-23:active {
+    background-color: #F7F7F7;
+    border-color: #000000;
+    transform: scale(.96);
+}
+
+.button-23:disabled {
+    border-color: #DDDDDD;
+    color: #DDDDDD;
+    cursor: not-allowed;
+    opacity: 1;
+}

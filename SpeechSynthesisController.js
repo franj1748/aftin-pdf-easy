@@ -201,13 +201,11 @@ class VoiceReader {
      */
     addPopoverEvents() {
         const voices = this.synth.getVoices();
-
+        
         let htmlContent = `
             <div>
                 <label class="mb-3" for="voiceSelect">Voz:</label>
-                <select id="voiceSelect" class="form-select mb-4 text-center text-light bg-dark">
-                    ${voices.map( voice => `<option value="${voice.name}">${voice.name} (${voice.lang})</option>` ).join('')}
-                </select>
+                <select id="voiceSelect" class="form-select mb-4 text-center text-light bg-dark"></select>
                 <label for="rangeVoice" class="form-label">Velocidad</label>
                 <div class="d-flex justify-content-evenly">
                     <i class="bi bi-skip-backward-circle"></i>
@@ -244,6 +242,22 @@ class VoiceReader {
                 footer: 'd-flex justify-content-evenly text-light'
             }
         });
+
+        const populateVoiceList = () => {
+            const voices = window.speechSynthesis.getVoices();
+            const voiceSelect = document.querySelector( '#voiceSelect' );
+    
+            // Asegurarse de que las voces estén disponibles antes de llenar
+            if ( voices.length > 0 ) {
+                voiceSelect.innerHTML = voices
+                    .map( voice => `<option value="${voice.name}">${voice.name} ( ${voice.lang})</option>` )
+                    .join('');
+            }
+        };
+
+        // Cargar las voces y agregar un listener para el evento voiceschanged
+        populateVoiceList(); // Llamar por si ya están disponibles
+        window.speechSynthesis.onvoiceschanged = populateVoiceList;
 
         const pauseIcon   = document.querySelector( 'i.bi-pause-circle-fill' );
         const resumeIcon  = document.querySelector( 'i.bi-play-circle-fill' );

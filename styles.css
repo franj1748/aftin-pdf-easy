@@ -40,7 +40,7 @@ hr {
     cursor: pointer;
     color: #000;
     font-size: 20px; /* Aumentar tamaño del ícono */
-    z-index: 100000;
+    z-index: 1;
 }
 
 /* Clase para elementos que pueden ser eliminados */

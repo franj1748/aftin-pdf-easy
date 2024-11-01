@@ -202,7 +202,7 @@ class toPdf {
             filename: this.title,
             margin: [margin, margin, margin, margin],
             image: { type: 'jpeg', quality: quality },
-            html2canvas: { scale: 1 },
+            html2canvas: { scale: 1,  scrollX: 0, scrollY: 0, },
             jsPDF: { unit: 'mm', format: format, orientation: orientation },
             pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
         };

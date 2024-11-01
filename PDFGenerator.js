@@ -203,7 +203,7 @@ class toPdf {
             margin: [margin, margin, margin, margin],
             image: { type: 'jpeg', quality: quality },
             html2canvas: { scale: 1 },
-            jsPDF: { unit: 'mm', format: format, orientation: orientation, compress: true },
+            jsPDF: { unit: 'mm', format: format, orientation: orientation, compress: false },
             pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
         };
 
